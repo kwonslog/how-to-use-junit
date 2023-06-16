@@ -14,9 +14,4 @@ public class HelloController {
   public Mono<String> hello2() {
     return Mono.just("hello");
   }
-
-  public Mono<String> hello3() {
-    TestService testService = new TestService();
-    return testService.getHello();
-  }
 }
