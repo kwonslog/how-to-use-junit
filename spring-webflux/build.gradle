@@ -23,7 +23,14 @@ repositories {
 	maven { url 'https://repo.spring.io/snapshot' }
 }
 
+test {
+    useJUnitPlatform()
+}
+
 dependencies {
+	// https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-api
+	testImplementation 'org.junit.jupiter:junit-jupiter-api:5.9.2'
+
 	implementation 'org.springframework.boot:spring-boot-starter-webflux'
 	compileOnly 'org.projectlombok:lombok'
 	annotationProcessor 'org.projectlombok:lombok'
