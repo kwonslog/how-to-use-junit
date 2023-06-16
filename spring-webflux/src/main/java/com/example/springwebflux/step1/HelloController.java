@@ -16,11 +16,7 @@ public class HelloController {
   }
 
   public Mono<String> hello3() {
-    /*
-     * @Service 와 같은 어노테이션을 사용하지 않는다.
-     */
     TestService testService = new TestService();
-
     return testService.getHello();
   }
 }
