@@ -7,6 +7,4 @@
 
 ### 소스 프로젝트 구조
 - 폴더 별로 구분 되어 있으며 폴더 간에 의존성은 없다.
-- spring-web : servlet statck
-- spring-webflux : reactive statck
 
