@@ -14,4 +14,6 @@ public class Controller {
     public String case1() {
         return service.getText();
     }
+    
+    //TODO POST, PUT, DELETE 추가
 }
