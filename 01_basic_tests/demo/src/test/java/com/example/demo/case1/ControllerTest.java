@@ -19,11 +19,35 @@ class ControllerTest {
     private MockMvc mockMvc;
 
     @Test
-    @DisplayName("성공_getText_테스트")
-    public void getText() throws Exception {
+    @DisplayName("GET_매소드호출")
+    public void case1() throws Exception {
         mockMvc.perform(MockMvcRequestBuilders.get("/case1"))
                 .andExpect(status().isOk())
                 .andExpect(content().string("case1"))
         ;
+    }
+
+    @Test
+    @DisplayName("POST_메소드호출")
+    public void case2() throws Exception {
+        mockMvc.perform(MockMvcRequestBuilders.post("/case2"))
+                .andExpect(status().isOk())
+                .andExpect(content().string("case2"));
+    }
+
+    @Test
+    @DisplayName("PUT_메소드호출")
+    public void case3() throws Exception {
+        mockMvc.perform(MockMvcRequestBuilders.put("/case3"))
+                .andExpect(status().isOk())
+                .andExpect(content().string("case3"));
+    }
+
+    @Test
+    @DisplayName("DELETE_메소드호출")
+    public void case4() throws Exception {
+        mockMvc.perform(MockMvcRequestBuilders.delete("/case4"))
+                .andExpect(status().isOk())
+                .andExpect(content().string("case4"));
     }
 }
