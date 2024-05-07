@@ -1,7 +1,7 @@
 package com.example.demo.case1;
 
 @org.springframework.stereotype.Service
-public class Service {
+public class Service1 {
 
     public String getCase1Text() {
         return "case1";

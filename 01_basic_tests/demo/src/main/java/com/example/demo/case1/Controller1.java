@@ -5,9 +5,9 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequiredArgsConstructor
-public class Controller {
+public class Controller1 {
 
-    private final Service service;
+    private final Service1 service;
 
     @GetMapping("/case1")
     public String case1() {

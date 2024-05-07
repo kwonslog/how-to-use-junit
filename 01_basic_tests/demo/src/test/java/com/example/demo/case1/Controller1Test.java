@@ -11,9 +11,9 @@ import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
-@WebMvcTest(controllers = Controller.class)
-@Import({Service.class})
-class ControllerTest {
+@WebMvcTest(controllers = Controller1.class)
+@Import({Service1.class})
+class Controller1Test {
 
     @Autowired
     private MockMvc mockMvc;
