@@ -13,8 +13,7 @@ public class Controller1 {
     public String case1() {
         return service.getCase1Text();
     }
-    
-    //TODO POST, PUT, DELETE 추가
+
     @PostMapping("/case2")
     public String case2() {
         return service.getCase2Text();
