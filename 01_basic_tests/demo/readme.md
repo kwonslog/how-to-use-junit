@@ -27,10 +27,29 @@
 ### com.example.demo.case4 패키지
 #### UserRepositoryTest
  - @DataJpaTest 를 사용하여 테스트 케이스 작성 하였다.
- - @MockBean, org.mockito.Mockito.when 메소드를 사용하는 테스트도 작성 하였다.
 
 #### UserRepository2Test
  - @TestPropertySource 를 사용하여 테스트 DB 데이터소스를 직접 설정 하였다.
  - 마리아 DB를 사용 할 경우 @AutoConfigureTestDatabase(replace = AutoConfigureTestDatabase.Replace.NONE) 설정값이 필요했다.
  - @DataJpaTest는 클래스패스에 인메모리 db가 있을 경우 자동으로 구성하여 사용 한다.(@AutoConfigureTestDatabase 사용)
  - 그래서 @TestPropertySource 를 사용하는 경우에는 추가 설정값(replace = AutoConfigureTestDatabase.Replace.NONE)이 필요하다.
+
+#### UserRepository3Test
+- @DataJpaTest 를 사용하여 테스트 케이스 작성 하였다.
+- @MockBean, org.mockito.Mockito.when 메소드를 사용하는 테스트도 작성 하였다.
+```java
+class UserRepositoryTest {
+    
+    // 하나는 실제, 하나의 모의(mock) 객체를 주입 받도록 동시에 사용하고 있다.
+    // 이 경우 모의(mock) 객체가 실제 객체를 오버라이드 하게 되어 
+    // userRepository 또한 모의 객체가 주입되는 것을 확인 하였다.
+    @Autowired
+    private UserRepository userRepository;
+
+    @MockBean
+    private UserRepository mockUserRepository;
+    
+    ...생략
+}
+
+```
