@@ -34,6 +34,9 @@ dependencies {
 	// junit5 에서 given/when/then 사용을 위해 라이브러리 추가
 	testImplementation group: 'org.mockito', name: 'mockito-core', version: '5.11.0'
 
+	//마리아 DB 드라이버 추가
+	runtimeOnly 'org.mariadb.jdbc:mariadb-java-client'
+	
 	
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	compileOnly 'org.projectlombok:lombok'
