@@ -54,3 +54,8 @@ class UserRepositoryTest {
 }
 
 ```
+
+### com.example.demo.case4 패키지
+#### Service5Test, Service51Test
+- @TestConfiguration 을 사용하는 테스트를 하였다.(간단하게 메소드 하나만 변경하여 테스트 실행.) 
+- @TestConfiguration 은 테스트 환경을 위한 복잡한 설정값들이 필요할 경우 사용하면 된다.
