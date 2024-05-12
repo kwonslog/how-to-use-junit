@@ -43,6 +43,7 @@ class UserRepositoryTest {
     // 하나는 실제, 하나의 모의(mock) 객체를 주입 받도록 동시에 사용하고 있다.
     // 이 경우 모의(mock) 객체가 실제 객체를 오버라이드 하게 되어 
     // userRepository 또한 모의 객체가 주입되는 것을 확인 하였다.
+    // 그래서 userRepository 와 mockUserRepository 를 분리하여 테스트 하였다.
     @Autowired
     private UserRepository userRepository;
 
