@@ -27,6 +27,7 @@
 ### com.example.demo.case4 패키지
 #### UserRepositoryTest
  - @DataJpaTest 를 사용하여 테스트 케이스 작성 하였다.
+ - @Sql 을 사용하여 테스트 실행 insert 쿼리를 실행하고 다시 조회하는 테스트 케이스를 작성 하였다.
 
 #### UserRepository2Test
  - @TestPropertySource 를 사용하여 테스트 DB 데이터소스를 직접 설정 하였다.

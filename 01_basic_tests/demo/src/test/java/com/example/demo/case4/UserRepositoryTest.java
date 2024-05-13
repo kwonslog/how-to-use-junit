@@ -5,8 +5,7 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
-import org.springframework.boot.test.mock.mockito.MockBean;
-import org.springframework.context.annotation.Primary;
+import org.springframework.test.context.jdbc.Sql;
 
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
@@ -39,5 +38,15 @@ class UserRepositoryTest {
         assertNotNull(foundUser);
         Assertions.assertEquals("Jane Doe", foundUser.getName());
         Assertions.assertEquals("jane.doe@example.com", foundUser.getEmail());
+    }
+
+    @Sql(scripts = "classpath:test.sql")
+    @Test
+    @DisplayName("@Sql 을 사용하여 테스트 실행 전에 쿼리 실행하기")
+    void testFindUserById2() {
+        User user = userRepository.findById(1L).orElse(null);
+
+        Assertions.assertNotNull(user);
+        Assertions.assertEquals("John Doe", user.getName());
     }
 }
